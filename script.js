@@ -18,10 +18,11 @@ function getComputerChoice() {
     return computerChoiceGenerator
 }
 
-let computerChoice = getComputerChoice()
+const computerChoice = getComputerChoice()
 
+console.log(computerChoice)
 
-console.log(getComputerChoice())
+console.log(playerChoice === computerChoice)
 
 
 function playRound(playerChoice, computerChoice) {
