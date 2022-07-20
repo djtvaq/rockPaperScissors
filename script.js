@@ -14,8 +14,32 @@ console.log(playerChoice)
 
 
 function getComputerChoice() {
-    let computerChoice = choices[Math.floor(Math.random() * 3)]
-    return computerChoice
+    let computerChoiceGenerator = choices[Math.floor(Math.random() * 3)]
+    return computerChoiceGenerator
 }
 
+let computerChoice = getComputerChoice()
+
+
 console.log(getComputerChoice())
+
+
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+        return "Draw"
+    } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
+        return `You win, ${playerChoice} beats ${computerChoice}!`
+    } else if (playerChoice === 'rock' && computerChoice === 'paper') {
+        return `You lose, ${computerChoice} beats ${playerChoice}!`
+    } else if (playerChoice === 'paper' && computerChoice === 'rock') {
+        return `You win, ${playerChoice} beats ${computerChoice}!`
+    } else if (playerChoice === 'paper' && computerChoice === 'scissors') {
+        return `You lose, ${computerChoice} beats ${playerChoice}!`
+    } else if (playerChoice === 'scissors' && computerChoice === 'paper') {
+        return `You win, ${playerChoice} beats ${computerChoice}!`
+    } else if (playerChoice === 'scissors' && computerChoice === 'rock') {
+        return `You lose, ${computerChoice} beats ${playerChoice}!`
+    }
+}
+
+console.log(playRound(playerChoice, computerChoice))
