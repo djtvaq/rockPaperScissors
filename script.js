@@ -8,64 +8,82 @@
 
 
 
+const choices = ['rock', 'paper', 'scissors']
 
+let playerScore = 0
+let computerScore = 0
 
-function playRound() {
+function game() {
+    //best of five
 
-    let choices = ['rock', 'paper', 'scissors']
-    let playerInput = prompt('Rock, Paper or Scissors?')
-    let playerChoice = playerInput.toLowerCase()
+    for (let round = 0; round < 5; round++) {
 
-    function getComputerChoice() {
-        let computerChoiceGenerator = choices[Math.floor(Math.random() * 3)]
-        return computerChoiceGenerator
+        let playerInput = prompt('Rock, Paper or Scissors?')
+        let playerChoice = playerInput.toLowerCase()
+
+        function getComputerChoice() {
+            let computerChoiceGenerator = choices[Math.floor(Math.random() * 3)]
+            return computerChoiceGenerator
+        }
+
+        const computerChoice = getComputerChoice()
+
+        console.log(playerChoice)
+        console.log(computerChoice)
+
+        if (playerChoice === computerChoice) {
+            console.log("Draw")
+        } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
+            playerScore++;
+            console.log(`You win, ${playerChoice} beats ${computerChoice}!`)
+            console.log(playerScore)
+            console.log(computerScore)
+        } else if (playerChoice === 'rock' && computerChoice === 'paper') {
+            computerScore++;
+            console.log(`You lose, ${computerChoice} beats ${playerChoice}!`)
+            console.log(playerScore)
+            console.log(computerScore)
+        } else if (playerChoice === 'paper' && computerChoice === 'rock') {
+            playerScore++;
+            console.log(`You win, ${playerChoice} beats ${computerChoice}!`)
+            console.log(playerScore)
+            console.log(computerScore)
+        } else if (playerChoice === 'paper' && computerChoice === 'scissors') {
+            computerScore++;
+            console.log(`You lose, ${computerChoice} beats ${playerChoice}!`)
+            console.log(playerScore)
+            console.log(computerScore)
+        } else if (playerChoice === 'scissors' && computerChoice === 'paper') {
+            playerScore++;
+            console.log(`You win, ${playerChoice} beats ${computerChoice}!`)
+            console.log(playerScore)
+            console.log(computerScore)
+        } else if (playerChoice === 'scissors' && computerChoice === 'rock') {
+            computerScore++;
+            console.log(`You lose, ${computerChoice} beats ${playerChoice}!`)
+            console.log(playerScore)
+            console.log(computerScore)
+        }
     }
 
-    const computerChoice = getComputerChoice()
-
-
-    console.log(playerChoice)
-    console.log(computerChoice)
-
-    if (playerChoice === computerChoice) {
-
-        console.log("Draw")
-    } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
-       // playerScore++;
-        console.log(`You win, ${playerChoice} beats ${computerChoice}!`)
-    } else if (playerChoice === 'rock' && computerChoice === 'paper') {
-       // computerScore++;
-        console.log(`You lose, ${computerChoice} beats ${playerChoice}!`)
-    } else if (playerChoice === 'paper' && computerChoice === 'rock') {
-       // playerScore++;
-        console.log(`You win, ${playerChoice} beats ${computerChoice}!`)
-    } else if (playerChoice === 'paper' && computerChoice === 'scissors') {
-       // computerScore++;
-        console.log(`You lose, ${computerChoice} beats ${playerChoice}!`)
-    } else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-       // playerScore++;
-        console.log(`You win, ${playerChoice} beats ${computerChoice}!`)
-    } else if (playerChoice === 'scissors' && computerChoice === 'rock') {
-       // computerScore++;
-        console.log(`You lose, ${computerChoice} beats ${playerChoice}!`)
-    } 
+    if (playerScore > computerScore) {
+        console.log('You won the best of five!')
+    } else if (playerScore < computerScore) {
+        console.log('You lost the best of five!')
+    } else {
+        console.log('Its a draw!')
+    }
 }
 
-
-
-playRound()
-
-
-
-// function game() {
-//     //best of five
-//     let playerScore = 0
-//     let computerScore = 0
-
-
-//     for (let round = 0; round < 5; round++) {
+game()
 
 
 
-//     }
-// }
+
+
+
+
+
+
+
+
