@@ -7,6 +7,11 @@
 // At the end a winner will be crowned. 
 
 let choices = ['rock', 'paper', 'scissors']
+let playerInput = prompt('Rock, Paper or Scissors?')
+let playerChoice = playerInput.toLowerCase()
+
+console.log(playerChoice)
+
 
 function getComputerChoice() {
     let computerChoice = choices[Math.floor(Math.random() * 3)]
