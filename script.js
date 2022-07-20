@@ -6,41 +6,66 @@
 // We will loop this FIVE times, to make a game that is best out of five.
 // At the end a winner will be crowned. 
 
-let choices = ['rock', 'paper', 'scissors']
-let playerInput = prompt('Rock, Paper or Scissors?')
-let playerChoice = playerInput.toLowerCase()
-
-console.log(playerChoice)
 
 
-function getComputerChoice() {
-    let computerChoiceGenerator = choices[Math.floor(Math.random() * 3)]
-    return computerChoiceGenerator
-}
-
-const computerChoice = getComputerChoice()
-
-console.log(computerChoice)
-
-console.log(playerChoice === computerChoice)
 
 
-function playRound(playerChoice, computerChoice) {
-    if (playerChoice === computerChoice) {
-        return "Draw"
-    } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
-        return `You win, ${playerChoice} beats ${computerChoice}!`
-    } else if (playerChoice === 'rock' && computerChoice === 'paper') {
-        return `You lose, ${computerChoice} beats ${playerChoice}!`
-    } else if (playerChoice === 'paper' && computerChoice === 'rock') {
-        return `You win, ${playerChoice} beats ${computerChoice}!`
-    } else if (playerChoice === 'paper' && computerChoice === 'scissors') {
-        return `You lose, ${computerChoice} beats ${playerChoice}!`
-    } else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-        return `You win, ${playerChoice} beats ${computerChoice}!`
-    } else if (playerChoice === 'scissors' && computerChoice === 'rock') {
-        return `You lose, ${computerChoice} beats ${playerChoice}!`
+function playRound() {
+
+    let choices = ['rock', 'paper', 'scissors']
+    let playerInput = prompt('Rock, Paper or Scissors?')
+    let playerChoice = playerInput.toLowerCase()
+
+    function getComputerChoice() {
+        let computerChoiceGenerator = choices[Math.floor(Math.random() * 3)]
+        return computerChoiceGenerator
     }
+
+    const computerChoice = getComputerChoice()
+
+
+    console.log(playerChoice)
+    console.log(computerChoice)
+
+    if (playerChoice === computerChoice) {
+
+        console.log("Draw")
+    } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
+       // playerScore++;
+        console.log(`You win, ${playerChoice} beats ${computerChoice}!`)
+    } else if (playerChoice === 'rock' && computerChoice === 'paper') {
+       // computerScore++;
+        console.log(`You lose, ${computerChoice} beats ${playerChoice}!`)
+    } else if (playerChoice === 'paper' && computerChoice === 'rock') {
+       // playerScore++;
+        console.log(`You win, ${playerChoice} beats ${computerChoice}!`)
+    } else if (playerChoice === 'paper' && computerChoice === 'scissors') {
+       // computerScore++;
+        console.log(`You lose, ${computerChoice} beats ${playerChoice}!`)
+    } else if (playerChoice === 'scissors' && computerChoice === 'paper') {
+       // playerScore++;
+        console.log(`You win, ${playerChoice} beats ${computerChoice}!`)
+    } else if (playerChoice === 'scissors' && computerChoice === 'rock') {
+       // computerScore++;
+        console.log(`You lose, ${computerChoice} beats ${playerChoice}!`)
+    } 
 }
 
-console.log(playRound(playerChoice, computerChoice))
+
+
+playRound()
+
+
+
+// function game() {
+//     //best of five
+//     let playerScore = 0
+//     let computerScore = 0
+
+
+//     for (let round = 0; round < 5; round++) {
+
+
+
+//     }
+// }
