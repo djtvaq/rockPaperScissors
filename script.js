@@ -16,7 +16,7 @@ let computerScore = 0
 function game() {
     //best of five
 
-    for (let round = 0; round < 5; round++) {
+   // for (let round = 0; round < 5; round++) {
 
         let playerInput = prompt('Rock, Paper or Scissors?')
         let playerChoice = playerInput.toLowerCase()
@@ -64,7 +64,7 @@ function game() {
             console.log(playerScore)
             console.log(computerScore)
         }
-    }
+   // }
 
     if (playerScore > computerScore) {
         console.log('You won the best of five!')
@@ -74,6 +74,8 @@ function game() {
         console.log('Its a draw!')
     }
 }
+
+
 
 game()
 
